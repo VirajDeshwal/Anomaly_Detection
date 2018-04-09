@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+2#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jan 31 16:19:09 2018
@@ -35,14 +35,20 @@ dos = ["back.", "land.", "neptune.", "pod.", "smurf.", "teardrop."]
 r2l = ["ftp_write.", "guess_passwd.", "imap.", "multihop." ,"phf.", "spy.", "warezclient.", "warezmaster."]
 u2r = ["buffer_overflow.", "loadmodule.", "perl.", "rootkit."]
 probe = ["ipsweep.", "nmap.", "portsweep.", "satan."]
-'''
-'''Import the dataset'''
+
+Import the dataset'''
 
 #file = pd.read_csv('Dataset', header =None, names = col_names)
-test_file= pd.read_csv('labelled_10', header =None, names = col_names)
-X_test = test_file.iloc[:,:-1].values
-y_test=test_file.iloc[:,41].values
+test_file= pd.read_csv('test/labelled_10', header =None, names = col_names)
+X = test_file.iloc[:,:-1].values
+y=test_file.iloc[:,41].values
+print(test_file.shape)
+print(X.shape)
+
+
+#train_file = pd.read_csv('unlabelled_10', names = col_names)
 '''
+
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 
 label_X = LabelEncoder()
